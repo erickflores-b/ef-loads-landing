@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EF Loads - Freight Broker Automation</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@7.18.9/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
+
+    const App = () => {
+      const [email, setEmail] = useState('');
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Beta sign-up:', email); // Mock backend
+        alert('Thank you for joining the EF Loads beta!');
+        setEmail('');
+      };
+
+      return (
+        <div className="font-sans">
+          {/* Navigation */}
+          <nav className="sticky top-0 bg-white shadow z-10">
+            <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+              <h1 className="text-2xl font-bold text-blue-600">EF Loads</h1>
+              <div className="space-x-4">
+                <a href="#home" className="text-gray-600 hover:text-blue-600">Home</a>
+                <a href="#problem" className="text-gray-600 hover:text-blue-600">Problem</a>
+                <a href="#solution" className="text-gray-600 hover:text-blue-600">Solution</a>
+                <a href="#pricing" className="text-gray-600 hover:text-blue-600">Pricing</a>
+                <a href="#beta" className="text-gray-600 hover:text-blue-600">Join Beta</a>
+              </div>
+            </div>
+          </nav>
+
+          {/* Hero Section */}
+          <section id="home" className="bg-blue-50 py-16 text-center">
+            <div className="max-w-4xl mx-auto px-4">
+              <h2 className="text-4xl font-bold mb-4">Save 50% Time with EF Loads</h2>
+              <p className="text-lg mb-6">Low-cost TMS for small freight brokerages to streamline loads, contracts, and onboarding.</p>
+              <a href="#beta" className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">Join Our Beta</a>
+            </div>
+          </section>
+
+          {/* Problem Section */}
+          <section id="problem" className="py-16 bg-white">
+            <div className="max-w-4xl mx-auto px-4 text-center">
+              <h2 className="text-3xl font-semibold mb-4">The Struggle of Small Brokerages</h2>
+              <p className="text-lg mb-6">Wasting hours on manual quoting, contracts, and carrier onboarding? Inefficient systems hurt your bottom line.</p>
+              <svg className="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+          </section>
+
+          {/* Solution Section */}
+          <section id="solution" className="py-16 bg-gray-100">
+            <div className="max-w-4xl mx-auto px-4">
+              <h2 className="text-3xl font-semibold mb-4 text-center">How EF Loads Helps</h2>
+              <p className="text-lg mb-6 text-center">EF Loads automates your workflow, saving time and money.</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded shadow">
+                  <h3 className="text-xl font-semibold mb-2">AI-Powered Quoting</h3>
+                  <p>Generate fast, accurate freight quotes with AI.</p>
+                </div>
+                <div className="bg-white p-6 rounded shadow">
+                  <h3 className="text-xl font-semibold mb-2">Automated Contracts</h3>
+                  <p>Create and send contracts instantly with one click.</p>
+                </div>
+                <div className="bg-white p-6 rounded shadow">
+                  <h3 className="text-xl font-semibold mb-2">Load Management</h3>
+                  <p>Drag-and-drop pipeline to track your loads.</p>
+                </div>
+                <div className="bg-white p-6 rounded shadow">
+                  <h3 className="text-xl font-semibold mb-2">Carrier Onboarding</h3>
+                  <p>Securely onboard drivers with automated forms.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Benefits Section */}
+          <section id="benefits" className="py-16 bg-white">
+            <div className="max-w-4xl mx-auto px-4 text-center">
+              <h2 className="text-3xl font-semibold mb-4">Why Choose EF Loads?</h2>
+              <p className="text-lg mb-6">Cut operational time by 50%, win more loads, stay compliant. Built by ex-brokers who know your pain.</p>
+              <svg className="w-16 h-16 mx-auto text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+          </section>
+
+          {/* Pricing Section */}
+          <section id="pricing" className="py-16 bg-gray-100">
+            <div className="max-w-4xl mx-auto px-4 text-center">
+              <h2 className="text-3xl font-semibold mb-4">Affordable Pricing</h2>
+              <p className="text-lg mb-6">Plans to fit your brokerage: Basic ($98/mo + $20/user), Pro ($499/mo + $50/user), Enterprise (custom).</p>
+              <a href="#beta" className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">Get Started</a>
+            </div>
+          </section>
+
+          {/* Call-to-Action Section */}
+          <section id="beta" className="py-16 bg-blue-600 text-white text-center">
+            <div className="max-w-4xl mx-auto px-4">
+              <h2 className="text-3xl font-semibold mb-4">Join Our Beta</h2>
+              <p className="text-lg mb-6">Transform your brokerage. Limited spots available!</p>
+              <form onSubmit={handleSubmit} className="flex justify-center">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="border p-3 rounded-l w-64 text-black"
+                  required
+                />
+                <button type="submit" className="bg-gray-800 text-white px-6 py-3 rounded-r hover:bg-gray-900">Sign Up</button>
+              </form>
+            </div>
+          </section>
+
+          {/* About Section */}
+          <section id="about" className="py-16 bg-white">
+            <div className="max-w-4xl mx-auto px-4 text-center">
+              <h2 className="text-3xl font-semibold mb-4">About EF Loads</h2>
+              <p className="text-lg mb-6">Built by ex-freight brokers who faced system chaos at FSL (2024–25). We get your struggles.</p>
+              <svg className="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a2 2 0 00-2-2h-3m-2 4h-5v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2m0-10V7a2 2 0 012-2h3l1-1 1 1h3a2 2 0 012 2v7m-8 4v1m0-4v1" />
+              </svg>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer className="bg-gray-800 text-white py-6">
+            <div className="max-w-4xl mx-auto px-4 text-center">
+              <p className="text-sm">© 2025 EF Loads. Made for small freight brokerages.</p>
+              <div className="space-x-4 mt-2">
+                <a href="#" className="text-gray-400 hover:text-white">Contact</a>
+                <a href="#" className="text-gray-400 hover:text-white">Privacy Policy</a>
+                <a href="#" className="text-gray-400 hover:text-white">Terms</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
